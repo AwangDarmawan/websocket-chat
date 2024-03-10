@@ -8,9 +8,12 @@
   "name": "server",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+    "node": "v18.17.1"
+  },
   "devDependencies": {},
   "scripts": {
-    "start": "nodemon index.jsx"
+    "start": "node index.jsx"
   },
   "author": "",
   "license": "ISC",
