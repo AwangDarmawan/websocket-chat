@@ -3,7 +3,7 @@
   "routes": [
     {
       "src": "/socket.io/(.*)",
-      "dest": "https://websocket-chat-server-asli.vercel.app/socket.io/$1"
+      "dest": "http://localhost:3001"
     },
     {
       "src": "/(.*)",

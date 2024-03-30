@@ -10,7 +10,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: ["https://websocket-chat-client-alpha.vercel.app"],
+    origin: "http://localhost:3000",
     methods: ["GET", "POST"],
   },
 });
@@ -26,6 +26,7 @@ io.on("connection", (socket) => {
     socket.to(data.room).emit("receive_message", data);
   });
 });
-server.listen("https://websocket-chat-server-asli.vercel.app",() => {
+
+server.listen(3001, () => {
   console.log("SERVER IS RUNNING");
 });
