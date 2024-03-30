@@ -10,7 +10,7 @@
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
-    "start": "nodemon index.jsx"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
