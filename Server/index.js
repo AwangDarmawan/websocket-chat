@@ -27,6 +27,13 @@ io.on("connection", (socket) => {
   });
 });
 
+app.get("/", (req, res) => {
+  res.send("Welcome to WebSocket Chat Server");
+});
+app.post("/example", (req, res) => {
+  res.send("Ini adalah contoh rute POST");
+});
+
 server.listen(3001, () => {
   console.log("SERVER IS RUNNING");
 });
