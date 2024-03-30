@@ -4,15 +4,17 @@ const http = require("http");
 const { Server } = require("socket.io");
 const cors = require("cors");
 
-app.use(cors());
+const corsOptions = {
+  origin: ["http://localhost:3000", "https://websocket-chat-client-alpha.vercel.app/"],
+  methods: ["GET", "POST"],
+};
+
+app.use(cors(corsOptions));
 
 const server = http.createServer(app);
 
 const io = new Server(server, {
-  cors: {
-    origin: ["http://localhost:3000", "https://websocket-chat-client-alpha.vercel.app"],
-    methods: ["GET", "POST"],
-  },
+  cors: corsOptions 
 });
 
 io.on("connection", (socket) => {
@@ -26,6 +28,7 @@ io.on("connection", (socket) => {
     socket.to(data.room).emit("receive_message", data);
   });
 });
+
 server.listen(3001, () => {
   console.log("SERVER IS RUNNING");
 });
