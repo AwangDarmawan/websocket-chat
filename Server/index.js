@@ -26,6 +26,6 @@ io.on("connection", (socket) => {
     socket.to(data.room).emit("receive_message", data);
   });
 });
-server.listen(3001, () => {
+server.listen(3001, "https://websocket-chat-server-asli.vercel.app",() => {
   console.log("SERVER IS RUNNING");
 });
